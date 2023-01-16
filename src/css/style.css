@@ -1,0 +1,21 @@
+html {
+	font-size: 62.5%;
+}
+.logo-style{
+    font-family: 'Courgette', cursive;
+}
+
+body{
+    background-color: #010625;
+}
+
+.white{
+    color: white;
+}
+.header-color{
+    background-color: #021928;
+}
+
+.footer-color{
+    background-color: #021928;
+}
