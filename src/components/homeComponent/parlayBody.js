@@ -11,7 +11,7 @@ export default function ParlayBody() {
             <img src={require("../../assets/leagues/serieA.png")} style={{width: "3.6rem",height: "3.6rem",borderRadius: "3rem"}}/>
             <img src={require("../../assets/leagues/bundesliga.png")} style={{width: "3.6rem",height: "3.6rem",borderRadius: "3rem"}}/>
             </div>
-            <div style={{display: 'flex',alignItems: "center",padding: "0.5rem 1rem 1rem 1rem",backgroundColor: "#0A324D",borderRadius: "0.9rem",marginLeft: "2rem",flexBasis: "30%"}}>
+            <div style={{display: 'flex',alignItems: "center",padding: "0.5rem 0 1rem 1rem",backgroundColor: "#0A324D",borderRadius: "0.9rem",marginLeft: "2rem",flexBasis: "30%"}}>
                 <h1 style={{margin: 0,fontSize: "1.6rem"}}>Leagues</h1>
                 <img src={require("../../assets/icons/arrow-drop-down.svg").default} style={{width: "3.6rem",height: "2rem",borderRadius: "3rem",marginTop: 0}}/>
             </div>
@@ -73,7 +73,7 @@ function Card() {
   return (
     <div>
         <div style={{display: "flex",marginTop: "1.8rem",marginBottom: "1rem",justifyContent: "space-between"}}>
-            <div style={{display: 'inline-flex',alignItems: "center",padding: "0.5rem 1rem 1rem 1rem",backgroundColor: "#0A324D",borderRadius: "0.9rem"}}>
+            <div style={{display: 'inline-flex',alignItems: "center",padding: "0.5rem 0 1rem 1rem",backgroundColor: "#0A324D",borderRadius: "0.9rem"}}>
                 <h1 style={{margin: 0,fontSize: "1.6rem"}}>Full Time</h1>
                 <img src={require("../../assets/icons/arrow-drop-down.svg").default} style={{width: "3.6rem",height: "2rem",borderRadius: "3rem",marginTop: 0}}/>
             </div>
