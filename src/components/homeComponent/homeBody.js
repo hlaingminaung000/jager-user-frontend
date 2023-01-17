@@ -10,7 +10,7 @@ export default function HomeBody() {
             <h1 style={{fontSize: "2rem",margin: "0 0 0.7rem 0"}}>Balance</h1>
             <h1 style={{fontSize: "2.1rem",margin: 0}}>5000.00 MMK</h1>
         </div>
-        <Link to="/parlay">
+        <Link to="/parlay" style={{textDecoration: "none"}}>
             <div className='white' style={{borderRadius: "2.2rem",marginBottom: "3rem",backgroundImage: `url(${parlayBackground})`,backgroundSize: "cover"}}>
                 <h1 style={{fontSize: "2rem",margin: 0,textAlign: 'center',padding: "3.5rem 0"}}>Parlay</h1>
             </div>

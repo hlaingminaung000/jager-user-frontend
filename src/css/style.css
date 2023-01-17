@@ -12,10 +12,18 @@ body{
 .white{
     color: white;
 }
+.black{
+    color: black;
+}
 .header-color{
     background-color: #021928;
 }
 
 .footer-color{
     background-color: #021928;
+}
+#input-amount-to-bet::placeholder{
+    color: white;
+    font-size: 16px;
+    font-weight: normal;
 }
