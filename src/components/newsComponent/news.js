@@ -6,50 +6,33 @@ export default function News() {
   return (
     <div>
       <Header/>
-      <div style={{padding: "2rem"}}>
-        <div style={{display: "flex",justifyContent: "end"}}>
-            <div style={{display: 'flex',alignItems: "center",padding: "1rem 0 1rem 1rem",backgroundColor: "#0A324D",borderRadius: "0.9rem",marginLeft: "2rem"}}>
-              <h1 style={{margin: 0,fontSize: "1.6rem"}} className="white">Today</h1>
-              <img src={require("../../assets/icons/arrow-drop-down.svg").default} style={{width: "3.6rem",height: "2rem",borderRadius: "3rem",marginTop: 0}}/>
-            </div>
-        </div>
-        <div>
-            <div style={{display: "flex",alignItems: 'center'}}>
-              <img src={require("../../assets/leagues/serieA.png")} style={{width: "3.8rem",height: "3.5rem",borderRadius: "3rem"}}/>
-              <h1 className='white' style={{fontSize: "1.8rem",marginLeft: "0.8rem"}}>Italy Serie A</h1>
-            </div>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-        </div>
+      <div style={{padding: "2rem 1.5rem"}}>
+          <div style={{padding: "1.3rem 2.7rem",backgroundColor: "#0A324D",borderRadius: "2.7rem",marginBottom: "3.5rem"}}>
+            <input placeholder='Search..' id='news-search' style={{border: 0,backgroundColor: "#0A324D",outline: "none",color: "white",fontWeight: "bold",fontSize: "1.9rem"}}/>
+          </div>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
       </div>
       <Footer/>
     </div>
   )
 }
 
+
 function Card() {
   return (
-    <div style={{display: "flex",backgroundColor: "#0A324D",padding: "1.7rem",borderRadius: "1.3rem",margin: "2rem 0"}}>
-      <div style={{display: "flex",flexBasis: "30%"}}>
-        <h1 style={{margin: 0,fontSize: "1.4rem"}} className="white"> Barcelona</h1>
-      </div>
-      <div style={{display: "flex",flexBasis: "15%"}}>
-        <img src={require("../../assets/teams/barcelona.png")} style={{width: "2.6rem",height: "1.9rem",borderRadius: "3rem"}}/>
-      </div>
-      <div style={{display: "flex",flexBasis: "10%",justifyContent: "center",alignItems: "center"}}>
-        <h1 style={{margin: 0,fontSize: "1.4rem"}} className="white"> 3-2</h1>
-      </div>
-      <div style={{display: "flex",flexBasis: "15%",justifyContent: "end"}}>
-        <img src={require("../../assets/teams/atheletic.png")} style={{width: "2.6rem",height: "1.9rem",borderRadius: "3rem"}}/>
-      </div>
-      <div style={{display: "flex",flexBasis: "30%",justifyContent: "end"}}>
-         <h1 style={{margin: 0,fontSize: "1.4rem"}} className="white">Athletic</h1>
+    <div style={{padding: "2rem 2.8rem",backgroundColor: "#0A324D",borderRadius: "2.6rem",display: "flex",marginBottom: "0.9rem"}}>
+      <img src={require("../../assets/news/news1.png")} style={{width: "8.8rem",height: "8rem",borderRadius: "0.7rem"}}/>
+      <div style={{display: "flex",flexDirection: "column",marginLeft: "1.2rem"}}>
+         <h1 style={{margin: 0,fontSize: "1.5rem",fontWeight: "normal",marginBottom: "1.5rem"}} className="white">Forest dumped out of FA Cup by Blackpool</h1>
+         <h1 style={{margin: 0,fontSize: "1.2rem",fontWeight: "normal"}} className="white">Lin Lin  | Jan 07,2023</h1>
       </div>
     </div>
   )
 }
+
+
+
 
