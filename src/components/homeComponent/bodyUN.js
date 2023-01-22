@@ -3,10 +3,10 @@ import GoBackHeader from '../goBackHeader'
 import Header from '../header'
 import ParlayBody from './parlayBody'
 
-export default function Parlay() {
+export default function BodyUN() {
   return (
     <div className='white'>
-        <GoBackHeader name="Parlay"/>
+        <GoBackHeader name="BodyUN"/>
         <ParlayBody/>
     </div>
   )

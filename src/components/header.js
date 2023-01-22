@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <div style={{display: "flex",flexDirection: "row",justifyContent: 'space-between',alignItems: "center",padding: "2.8rem 2.7rem"}} className="header-color">
+    <div style={{display: "flex",flexDirection: "row",justifyContent: 'space-between',alignItems: "center",padding: "2.8rem 2.7rem",position: "sticky",top: 0,right: 0,left: 0}} className="header-color">
         <h1 style={{fontSize: "2.5rem",padding: 0,margin: 0}} className="logo-style white">
             M-Bet
         </h1>
