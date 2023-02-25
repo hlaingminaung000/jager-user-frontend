@@ -4,7 +4,7 @@ import Header from "../header"
 
 export default function GoalResult() {
   return (
-    <div>
+    <div >
       <Header/>
       <div style={{padding: "2rem"}}>
         <div style={{display: "flex",justifyContent: "end"}}>

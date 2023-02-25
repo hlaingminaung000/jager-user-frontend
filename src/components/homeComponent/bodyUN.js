@@ -1,7 +1,6 @@
 import React from 'react'
 import GoBackHeader from '../goBackHeader'
-import Header from '../header'
-import ParlayBody from './parlayBody'
+import ParlayBody from './parlay/parlayBody'
 
 export default function BodyUN() {
   return (

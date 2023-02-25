@@ -4,7 +4,7 @@ import GoBackHeader from '../goBackHeader'
 
 export default function NewsDetails() {
   return (
-    <div>
+    <div >
         <GoBackHeader name="News"/>
         <div>
           <img src={require("../../assets/news/news2.png")} style={{width: "100%",height: "23.6rem",marginBottom: "1.9rem"}}/>

@@ -5,7 +5,8 @@ html {
     font-family: 'Courgette', cursive;
 }
 
-body{
+
+.body-color{
     background-color: #010625;
 }
 
@@ -35,4 +36,21 @@ body{
 /* h1{
     font-family: 'Inter';
 } */
-
+.search-league{
+    background-color: #0A324D;
+    border: lightslategray;
+    caret-color: white;
+    color: whitesmoke
+}
+.search-league::placeholder{
+    color: white
+}
+.search-league::cursor{
+    color: white
+}
+/* .search-league:hover{
+    background-color: grey
+} */
+.header-filter-league{
+    padding: 0 !important;
+}

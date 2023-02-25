@@ -8,7 +8,7 @@ export default function News() {
 
   }
   return (
-    <div>
+    <div >
       <Header/>
       <div style={{padding: "2rem 1.5rem"}}>
           <div style={{padding: "1.3rem 2.7rem",backgroundColor: "#0A324D",borderRadius: "2.7rem",marginBottom: "3.5rem"}}>

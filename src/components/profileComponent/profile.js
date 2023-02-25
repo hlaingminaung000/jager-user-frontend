@@ -5,7 +5,7 @@ import Header from '../header'
 
 export default function Profile() {
   return (
-    <div>
+    <div >
       <Header/>
         <div style={{padding: "2rem 1.5rem"}}>
            <div style={{display: "flex",padding: "2.5rem 1.5rem",backgroundColor: "#0A324D",borderRadius: "1.3rem",marginBottom: "4rem"}}>
