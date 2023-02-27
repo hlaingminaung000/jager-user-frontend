@@ -60,12 +60,12 @@ const favLeaguesData =[
     },
 ]
 
-export default function ParlayBody() {
+export default function BodyUNBody() {
     const [filterOpen, setFilterOpen] = useState(false)
     const [bettingMatches,setBettingMatches] = useState([])
     const [favLeagues, setFavLeagues] = useState([])
     const [filterLeagues, setFilterLeagues] = useState([])
-    const [selectedBetCard,setSelectedBetCard] = useState([])
+    const [selectedBetCard,setSelectedBetCard] = useState({})
     const [betAmount,setBetAmount] =useState(0)
     useEffect(()=>{
         setFavLeagues(favLeaguesData)
@@ -83,13 +83,7 @@ export default function ParlayBody() {
         setFilterLeagues(copyArr)
     }
     const handleBetMatchClick = (e) =>{
-        const copyArr = selectedBetCard.length > 0 ? [...selectedBetCard] : []
-        const sameCardFound =copyArr.find(v => v.matchId == e.matchId && v.type == e.type && v.team == e.team);
-        if(sameCardFound) return setSelectedBetCard(copyArr.filter(v => v.matchId != e.matchId))
-        const index = copyArr.findIndex(v => v.matchId == e.matchId)
-        if(index > -1) copyArr[index] = e;
-        if(index == -1) copyArr.push(e)
-        setSelectedBetCard(copyArr)
+        setSelectedBetCard(e)
     }
     const handleBetClick = () =>{
         const objCopy ={...selectedBetCard};
@@ -130,11 +124,8 @@ export default function ParlayBody() {
             </div>
             {
                 bettingMatches.map((v)=>{
-                    let copyArr =selectedBetCard.length > 0 ? [...selectedBetCard] : []
-                    let obj = copyArr.filter(vv=>vv.matchId == v.matchId)[0]
-                    if(!obj) obj={};
                     return(
-                        <Card key={v.matchId} matchData={v} handleBetMatchClick={handleBetMatchClick} selectedBetCard={obj}/>
+                        <Card key={v.matchId} matchData={v} handleBetMatchClick={handleBetMatchClick} selectedBetCard={selectedBetCard}/>
                     )
                 })
             }
@@ -156,10 +147,10 @@ export default function ParlayBody() {
                 <div >
                     <div style={{display: "flex",justifyContent: "space-between"}}>
                         <h1 style={{margin: 0,padding: "2rem 0 0 0", fontSize: "1.6rem",fontWeight: "normal"}}>
-                            Parlay
+                            Type
                         </h1>
                         <h1 style={{margin: 0,padding: "2rem 0 0 0", fontSize: "1.6rem",fontWeight: "normal"}}>
-                           {selectedBetCard.length > 0 ? selectedBetCard.length : "-"}
+                           {selectedBetCard.type ? selectedBetCard.type : "-"}
                         </h1>
                     </div>
                     <div style={{display: "flex",justifyContent: "space-between"}}>
@@ -170,7 +161,14 @@ export default function ParlayBody() {
                             {Number(1000).toFixed(2)}
                         </h1>
                     </div>
-                   
+                    <div style={{display: "flex",justifyContent: "space-between"}}>
+                        <h1 style={{margin: 0,padding: "2rem 0 0 0", fontSize: "1.6rem",fontWeight: "normal"}}>
+                            Period
+                        </h1>
+                        <h1 style={{margin: 0,padding: "2rem 0 0 0", fontSize: "1.6rem",fontWeight: "normal"}}>
+                           {selectedBetCard.type ? selectedBetCard.betTime : "-"}
+                        </h1>
+                    </div>
                 </div>
             </div>
         </div>
@@ -230,7 +228,7 @@ function Card({matchData,handleBetMatchClick,selectedBetCard}) {
         </div>
         <div style={{backgroundColor: "#0A324D",borderRadius: "1.3rem"}}>
             <div style={{display: "flex",alignItems: "center"}}>
-                <ButtonBase style={{borderRadius: "1.3rem 0 0 0",backgroundColor: `${(selectedBetCard?.team == matchData.teamA && selectedBetCard?.matchId == matchData.matchId && selectedBetCard.choose == "win")? bettingSelectedColor : ""}`,padding: "2rem 0",display: "flex",flexDirection: "column",alignItems: "center",flexBasis: "50%",borderWidth: "0 0.5px 0 0",borderStyle: "solid",borderColor: "#4F4F4F"}} onClick={()=>handleBetMatchClick({betTime: matchTimeRange,matchId: matchData.matchId,type: "body",team: matchData.teamA,choose: "win"})}>
+                <ButtonBase style={{borderRadius: "1.3rem 0 0 0",backgroundColor: `${(selectedBetCard?.team == matchData.teamA && selectedBetCard?.matchId == matchData.matchId)? bettingSelectedColor : ""}`,padding: "2rem 0",display: "flex",flexDirection: "column",alignItems: "center",flexBasis: "50%",borderWidth: "0 0.5px 0 0",borderStyle: "solid",borderColor: "#4F4F4F"}} onClick={()=>handleBetMatchClick({betTime: matchTimeRange,matchId: matchData.matchId,type: "body",team: matchData.teamA})}>
                     <h1 style={{fontSize: "1.8rem",marginTop: 0}}>{matchData.teamA}</h1>
                     <div style={{width: "6.4rem",height: "3.1rem",backgroundColor: "#87CEEB",display: 'flex',justifyContent: 'center',alignItems: "center",borderRadius: "1rem",cursor: "pointer"}}>
                         <h1 style={{fontSize: "1.7rem",margin: 0}} className="black">
@@ -238,15 +236,15 @@ function Card({matchData,handleBetMatchClick,selectedBetCard}) {
                         </h1>
                     </div>
                 </ButtonBase>
-                <ButtonBase style={{borderRadius: "0 1.3rem 0 0",backgroundColor: `${(selectedBetCard?.team == matchData.teamB && selectedBetCard?.matchId == matchData.matchId && selectedBetCard.choose == "win")? bettingSelectedColor : ""}`,flexBasis: "50%",padding: "3rem 0"}} onClick={()=>handleBetMatchClick({betTime: matchTimeRange,matchId: matchData.matchId,type: "body",team: matchData.teamB,choose: "win"})}>
+                <ButtonBase style={{borderRadius: "0 1.3rem 0 0",backgroundColor: `${(selectedBetCard?.team == matchData.teamB && selectedBetCard?.matchId == matchData.matchId)? bettingSelectedColor : ""}`,flexBasis: "50%",padding: "3rem 0"}} onClick={()=>handleBetMatchClick({betTime: matchTimeRange,matchId: matchData.matchId,type: "body",team: matchData.teamB})}>
                     <h1 style={{fontSize: "1.8rem"}}>{matchData.teamB}</h1>
                 </ButtonBase>
             </div>
             <div style={{display: "flex",position: 'relative'}}>
-                <ButtonBase style={{borderRadius: "0  0 0 1.3rem",backgroundColor: `${(selectedBetCard?.choose == 'over' && selectedBetCard?.matchId == matchData.matchId)? bettingSelectedColor : ""}`,flexBasis: "50%",borderWidth: "0.5px 0.5px 0 0",borderStyle: "solid",borderColor: "#4F4F4F"}} onClick={()=>handleBetMatchClick({betTime: matchTimeRange,matchId: matchData.matchId,type: "overUnder",choose: "over",team: matchData.teamA})}>
+                <ButtonBase style={{borderRadius: "0  0 0 1.3rem",backgroundColor: `${(selectedBetCard?.choose == 'over' && selectedBetCard?.matchId == matchData.matchId)? bettingSelectedColor : ""}`,flexBasis: "50%",borderWidth: "0.5px 0.5px 0 0",borderStyle: "solid",borderColor: "#4F4F4F"}} onClick={()=>handleBetMatchClick({betTime: matchTimeRange,matchId: matchData.matchId,type: "overUnder",choose: "over"})}>
                         <h1 style={{fontSize: "1.8rem",margin: "1.5rem 0",}}>Over</h1>
                 </ButtonBase>
-                <ButtonBase style={{borderRadius: "0  0 1.3rem 0",backgroundColor: `${(selectedBetCard?.choose == 'under' && selectedBetCard?.matchId == matchData.matchId)? bettingSelectedColor : ""}`,flexBasis: "50%",borderWidth: "0.5px 0 0 0",borderStyle: "solid",borderColor: "#4F4F4F"}} onClick={()=>handleBetMatchClick({betTime: matchTimeRange,matchId: matchData.matchId,type: "overUnder",choose: "under",team: matchData.teamB})}>
+                <ButtonBase style={{borderRadius: "0  0 1.3rem 0",backgroundColor: `${(selectedBetCard?.choose == 'under' && selectedBetCard?.matchId == matchData.matchId)? bettingSelectedColor : ""}`,flexBasis: "50%",borderWidth: "0.5px 0 0 0",borderStyle: "solid",borderColor: "#4F4F4F"}} onClick={()=>handleBetMatchClick({betTime: matchTimeRange,matchId: matchData.matchId,type: "overUnder",choose: "under"})}>
                         <h1 style={{fontSize: "1.8rem",margin: "1.5rem 0"}}>Under</h1>
                 </ButtonBase>
                 <div style={{position: "absolute",left: `calc(50% - 32px)`,top: `calc(50% - 15.5px)`,width: "6.4rem",height: "3.1rem",backgroundColor: "#87CEEB",display: 'flex',justifyContent: 'center',alignItems: "center",borderRadius: "1rem",cursor: "pointer"}}>

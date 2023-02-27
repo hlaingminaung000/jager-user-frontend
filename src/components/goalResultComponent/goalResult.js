@@ -4,9 +4,9 @@ import Header from "../header"
 
 export default function GoalResult() {
   return (
-    <div >
+    <div className='scrollable-body'>
       <Header/>
-      <div style={{padding: "2rem"}}>
+      <div style={{padding: "2rem"}} >
         <div style={{display: "flex",justifyContent: "end"}}>
             <div style={{display: 'flex',alignItems: "center",padding: "1rem 0 1rem 1rem",backgroundColor: "#0A324D",borderRadius: "0.9rem",marginLeft: "2rem"}}>
               <h1 style={{margin: 0,fontSize: "1.6rem"}} className="white">Today</h1>
@@ -14,16 +14,18 @@ export default function GoalResult() {
             </div>
         </div>
         <div>
-            <div style={{display: "flex",alignItems: 'center'}}>
-              <img src={require("../../assets/leagues/serieA.png")} style={{width: "3.8rem",height: "3.5rem",borderRadius: "3rem"}}/>
-              <h1 className='white' style={{fontSize: "1.8rem",marginLeft: "0.8rem"}}>Italy Serie A</h1>
-            </div>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+          <div>
+              <div style={{display: "flex",alignItems: 'center'}}>
+                <img src={require("../../assets/leagues/serieA.png")} style={{width: "3.8rem",height: "3.5rem",borderRadius: "3rem"}}/>
+                <h1 className='white' style={{fontSize: "1.8rem",marginLeft: "0.8rem"}}>Italy Serie A</h1>
+              </div>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+          </div>
         </div>
       </div>
       <Footer/>

@@ -1,13 +1,12 @@
 import React from 'react'
 import GoBackHeader from '../../goBackHeader'
-import ParlayBody from './parlayBody'
+import BodyUNBody from './bodyUNBody'
 
-export default function Parlay() {
-
+export default function BodyUN() {
   return (
     <div className='white scrollable-parlay-body'>
-        <GoBackHeader name="Parlay"/>
-        <ParlayBody/>
+        <GoBackHeader name="Body UN"/>
+        <BodyUNBody/>
     </div>
   )
 }

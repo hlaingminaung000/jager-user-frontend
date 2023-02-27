@@ -2,12 +2,17 @@ import React from 'react'
 import {Link} from "react-router-dom"
 import parlayBackground from "../../assets/icons/parlay.svg"
 import bodyUNBackground from "../../assets/icons/body-UN.svg"
+import en from "../../languages/en.json"
+import my from "../../languages/my.json"
+import {languageContext} from "../../context"
 
 export default function HomeBody() {
+    const lang = React.useContext(languageContext);  
+    let text = (lang == "my") ? my : en;
   return (
-    <div style={{padding: "2rem 1.5rem",overflowY: "auto",height: `calc(100vh - 84px)`}}>
+    <div style={{padding: "2rem 1.5rem"}} className='scrollable-body'>
         <div className='white' style={{borderRadius: "2.2rem",background: "#2E5261",padding: "1.8rem",marginBottom: "3rem"}}>
-            <h1 style={{fontSize: "2rem",margin: "0 0 0.7rem 0"}}>Balance</h1>
+            <h1 style={{fontSize: "2rem",margin: "0 0 0.7rem 0"}}>{text.balance}</h1>
             <h1 style={{fontSize: "2.1rem",margin: 0}}>5000.00 MMK</h1>
         </div>
         <Link to="/parlay" style={{textDecoration: "none"}}>

@@ -1,6 +1,33 @@
 html {
 	font-size: 62.5%;
 }
+body{
+    padding: 0 !important;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+.scrollable-body{
+    overflow-y: auto;
+    height: calc(100vh - 84px);
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.scrollable-body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+.scrollable-parlay-body{
+    overflow-y: auto;
+    height: calc(100vh - 210px);
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.scrollable-parlay-body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
 .logo-style{
     font-family: 'Courgette', cursive;
 }
@@ -53,4 +80,16 @@ html {
 } */
 .header-filter-league{
     padding: 0 !important;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
 }
