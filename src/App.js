@@ -12,14 +12,18 @@ import AccountStatement from './components/homeComponent/accountStatement';
 import NewsDetails from './components/newsComponent/newsDetails';
 import "./css/style.css"
 import { languageContext } from './context';
+import { useState } from 'react';
 
 function App() {
+  const [lang,setLang] = useState("my");
+  const changeLang = (l) =>{
+    setLang(l)
+  }
   
   return (
-      <languageContext.Provider value="my">
-        <div style={{width: "390px",marginLeft: "auto",marginRight:"auto",minHeight: "100vh"}} className="body-color">
+      <languageContext.Provider value={{lang,changeLang}}>
+        <div style={{width: "390px",marginLeft: "auto",marginRight:"auto",minHeight: "100vh",fontFamily: `${lang == "my" ? "myanmar" : "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif"}`}} className="body-color">
           <BrowserRouter>
-        
             <Routes>
               <Route path="/" element={<Home />}/>
               <Route path="/goalResult" element={<GoalResult />}/>

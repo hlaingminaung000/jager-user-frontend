@@ -18,6 +18,9 @@ import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import { Input } from 'antd';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import my from "../../../languages/my.json"
+import en from "../../../languages/en.json"
+import { languageContext } from '../../../context';
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -25,6 +28,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function FilterLeague({ hanldeFilterLeaguesClose, open }) {
+    const {lang} = React.useContext(languageContext); 
+    let text = (lang == "my") ? my : en;
     const [filterListItem, setFilterListItem] = useState([]);
     const [demoData, setDemoData] = useState([]);
     const handleListItemClick = (leagueId) => {
@@ -83,10 +88,10 @@ export default function FilterLeague({ hanldeFilterLeaguesClose, open }) {
                         >
                             <CloseIcon fontSize='large' />
                         </IconButton>
-                        <Input placeholder="Search..." className='search-league' size='large' onChange={handleSearch}/>
+                        <Input placeholder={text['Search...']} className='search-league' size='large' onChange={handleSearch}/>
                         <Button autoFocus color="inherit" onClick={hanldeFilterLeaguesClose}
-                            sx={{ fontSize: "1.3rem", '&:hover': { backgroundColor: '#87CEEB' } }}>
-                            Filter
+                            sx={{ fontSize: "1.5rem", '&:hover': { backgroundColor: '#87CEEB' } }}>
+                            {text.FILTER}
                         </Button>
                     </Toolbar>
                 </AppBar>

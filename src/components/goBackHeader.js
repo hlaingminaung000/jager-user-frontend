@@ -16,7 +16,7 @@ export default function GoBackHeader({name}) {
             <ArrowBackIcon style={{width: "4.8rem",height: "3.4rem",color: "white"}}/>
           </IconButton>
           <div style={{display: 'flex',justifyContent: "center",backgroundColor: "#021928",padding: "2.4rem 0"}}>
-              <h1 style={{margin: 0,fontSize: "2.1rem"}} className="white">{name}</h1>
+              <h2 style={{margin: 0}} className="white">{name}</h2>
           </div>
         </div>
     </div>

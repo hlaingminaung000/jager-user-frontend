@@ -1,4 +1,15 @@
 {
-    "balance": "Balance",
-    "parlay": "Parlay"
+    "Balance": "Balance",
+    "Parlay": "Parlay",
+    "Body/UN": "Body/UN",
+    "Account Statement": "Account Statement",
+    "Betted History": "Betted History",
+    "Check Balance": "Check Balance",
+    "Leagues": "Leagues",
+    "Search": "Search",
+    "FILTER": "FILTER",
+    "Bet": "Bet",
+    "Enter the amount": "Enter the amount",
+    "Type": "Type",
+    "Period": "Period"
 }

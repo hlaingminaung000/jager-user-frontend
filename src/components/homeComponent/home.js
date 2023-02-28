@@ -5,7 +5,7 @@ import HomeBody from './homeBody'
 
 export default function Home() {
   return (
-    <div>
+    <div className='scrollable-body'>
       <Header/>
       <HomeBody/>
       <Footer/>

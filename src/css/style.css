@@ -1,11 +1,21 @@
 html {
 	font-size: 62.5%;
 }
+
+@font-face {
+    font-family: 'myanmar';
+    src: local('myanmar'), url(../assets/fonts/Cherry_Unicode.ttf) format('truetype');
+}
+
+
 body{
     padding: 0 !important;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
+
+
+
 body::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
@@ -20,7 +30,7 @@ body::-webkit-scrollbar {
 }
 .scrollable-parlay-body{
     overflow-y: auto;
-    height: calc(100vh - 210px);
+    height: calc(100vh - 181px);
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
@@ -51,8 +61,8 @@ body::-webkit-scrollbar {
     background-color: #021928;
 }
 #input-amount-to-bet::placeholder{
-    color: white;
-    font-size: 16px;
+    color: rgb(140, 137, 137);
+    font-size: 14px;
     font-weight: normal;
 }
 #news-search::placeholder{
@@ -90,6 +100,13 @@ input::-webkit-inner-spin-button {
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+h2 {
+    font-size: 20px;
 }
+
+h3 {
+    font-size: 16px;
+}
+
+
+ 
