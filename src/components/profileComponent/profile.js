@@ -15,9 +15,12 @@ import Header from '../header'
 import { Avatar, Box, ButtonBase, ListItem, ListItemAvatar, ListItemText, Radio } from '@mui/material';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+import my from '../../languages/my.json'
+import en from '../../languages/en.json'
 
 export default function Profile() {
-  const {changeLang} = useContext(languageContext);
+  const {lang} = useContext(languageContext);
+  const text = lang == "my" ? my : en 
   const [openChangeLangModal, setOpenChangeLangModal] = useState(false);
   const handleChangeLangClick = () => {
     setOpenChangeLangModal(true);
@@ -30,29 +33,27 @@ export default function Profile() {
     <div >
       <Header/>
         <div style={{padding: "2rem 1.5rem"}}>
-           <div style={{display: "flex",padding: "2.5rem 1.5rem",backgroundColor: "#0A324D",borderRadius: "1.3rem",marginBottom: "4rem"}}>
+           <div style={{display: "flex",padding: "1.6rem 1.5rem",backgroundColor: "#0A324D",borderRadius: "1.3rem",marginBottom: "4rem"}}>
              <div style={{borderRadius: "10rem",backgroundColor: "#005853",width: "6.5rem",height: "6.5rem",display: "flex",justifyContent: "center",alignItems: "center"}}>
-              <h1 style={{fontSize: "2.5rem",fontWeight:"bolder"}}>L</h1>
+               <h3 style={{fontWeight:"bolder"}}>L</h3>
              </div>
              <div style={{display: "flex",flexDirection: "column",justifyContent: "center",marginLeft: "1.5rem"}}>
-               <h1 style={{margin: 0,fontSize: "1.9rem"}} className="white">Lin Gash</h1>
-               <h1 style={{margin: 0,fontSize: "2.1rem"}} className="white">5000.00 MMK</h1>
+               <h3 style={{margin: 0,marginBottom: "0.5rem"}} className="white">Lin Gash</h3>
+               <h3 style={{margin: 0,fontSize: "1.8rem"}} className="white">5000.00 MMK</h3>
              </div>
            </div>
-           <div style={{backgroundColor: "#0A324D",padding: "2rem 0",display: "flex",justifyContent: "center",alignItems: "center",borderRadius: "1.3rem",marginBottom: "3rem"}}>
-              <h1 style={{margin: 0,fontSize: "1.9rem"}} className="white">Rules</h1>
-           </div>
-             {/* <div style={{backgroundColor: "#0A324D",padding: "2rem 0",display: "flex",justifyContent: "center",alignItems: "center",borderRadius: "1.3rem",marginBottom: "3rem"}} onClick={handleChangeLangClick}> */}
+           <ButtonBase component="div" style={{backgroundColor: "#0A324D",padding: "1.8rem 0",display: "flex",justifyContent: "center",alignItems: "center",borderRadius: "1.3rem",marginBottom: "3rem"}}>
+              <h3 style={{margin: 0}} className="white">{text.Rules}</h3>
+           </ButtonBase>
         
-             <ButtonBase component="div" style={{backgroundColor: "#0A324D",padding: "2rem 0",display: "flex",borderRadius: "1.3rem",marginBottom: "3rem"}} onClick={handleChangeLangClick}>
-                      <h1 style={{margin: 0,fontSize: "1.9rem"}} className="white">Change Language</h1>
-             </ButtonBase>
-     
-             {/* </div> */}
+            <ButtonBase component="div" style={{backgroundColor: "#0A324D",padding: "1.8rem 0",display: "flex",borderRadius: "1.3rem",marginBottom: "3rem"}} onClick={handleChangeLangClick}>
+                    <h3 style={{margin: 0}} className="white">{text['Change Language']}</h3>
+            </ButtonBase>
+
            {openChangeLangModal ? <ChangeLangModal handleChangeLangClose={handleChangeLangClose} openChangeLangModal={openChangeLangModal}/> : ""}
-           <div style={{backgroundColor: "#0A324D",padding: "2rem 0",display: "flex",justifyContent: "center",alignItems: "center",borderRadius: "1.3rem",marginBottom: "3rem"}}>
-              <h1 style={{margin: 0,fontSize: "1.9rem"}} className="white">Change Password</h1>
-           </div>
+           <ButtonBase component="div" style={{backgroundColor: "#0A324D",padding: "1.8rem 0",display: "flex",justifyContent: "center",alignItems: "center",borderRadius: "1.3rem",marginBottom: "3rem"}}>
+              <h3 style={{margin: 0}} className="white">{text['Change Password']}</h3>
+           </ButtonBase>
         </div>
       <Footer/> 
     </div>
@@ -93,8 +94,8 @@ const ChangeLangModal = ({openChangeLangModal,handleChangeLangClose}) =>{
             sx={{ color: "white" }}
             onClick={() => handleListItemClick("my")}
             edge="end"
-            icon={<RadioButtonUncheckedIcon sx={{ width: 24, height: 24 }} />}
-            checkedIcon={<RadioButtonCheckedIcon sx={{ width: 24, height: 24, color: "#87CEEB" }} />}
+            icon={<RadioButtonUncheckedIcon sx={{ width: 20, height: 20 }} />}
+            checkedIcon={<RadioButtonCheckedIcon sx={{ width: 20, height: 20, color: "#87CEEB" }} />}
             checked={(lang == "my")? true : false}
         />
        </ListItem>

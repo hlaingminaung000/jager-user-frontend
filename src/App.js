@@ -11,19 +11,26 @@ import BodyUN from './components/homeComponent/bodyUN/bodyUN';
 import AccountStatement from './components/homeComponent/accountStatement';
 import NewsDetails from './components/newsComponent/newsDetails';
 import "./css/style.css"
-import { languageContext } from './context';
+import { languageContext,footerContext } from './context';
 import { useState } from 'react';
 
 function App() {
   const [lang,setLang] = useState("my");
+  const [currentPage,setPage] = useState();
+  console.log(`window.innerHeight`)
+  console.log(window.innerHeight)
   const changeLang = (l) =>{
     setLang(l)
+  }
+  const changePage = (p) =>{
+    setPage(p)
   }
   
   return (
       <languageContext.Provider value={{lang,changeLang}}>
-        <div style={{width: "390px",marginLeft: "auto",marginRight:"auto",minHeight: "100vh",fontFamily: `${lang == "my" ? "myanmar" : "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif"}`}} className="body-color">
-          <BrowserRouter>
+         <footerContext.Provider value={{currentPage,changePage}}>
+          <div style={{width: "390px",marginLeft: "auto",marginRight:"auto",minHeight: "100vh",fontFamily: `${lang == "my" ? "myanmar" : "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif"}`}} className="body-color">
+           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />}/>
               <Route path="/goalResult" element={<GoalResult />}/>
@@ -36,8 +43,9 @@ function App() {
               <Route path="/bettedHistory" element={<BettedHistory />}/>
               <Route path="/accountStatement" element={<AccountStatement />}/>
             </Routes>
-          </BrowserRouter>
-        </div>
+           </BrowserRouter>
+          </div>
+        </footerContext.Provider>
       </languageContext.Provider>
 
   );

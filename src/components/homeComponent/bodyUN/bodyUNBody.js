@@ -108,7 +108,7 @@ export default function BodyUNBody() {
               {favLeagues?.map((v) => {
 
                 return (
-                    <Avatar alt="Logo" key={v.leagueId} src={require(`../../../assets/leagues/${v.leagueLogo}`)} sx={{borderColor: "red",borderWidth: `${filterLeagues.includes(v.leagueId)? '2px': "0px"}`,borderStyle: 'solid'}} onClick={()=>handleFavLeaguesClick(v.leagueId)}/>  
+                    <Avatar alt="Logo" key={v.leagueId} src={require(`../../../assets/leagues/${v.leagueLogo}`)} sx={{borderColor: "red",borderWidth: `${filterLeagues.includes(v.leagueId)? '2px': "0px"}`,borderStyle: 'solid',cursor: "pointer"}} onClick={()=>handleFavLeaguesClick(v.leagueId)}/>  
                 )
               })}
             </div>
@@ -135,7 +135,7 @@ export default function BodyUNBody() {
         <div style={{width: "390px",position: "fixed",bottom: 0,left: 0,right: 0,zIndex: 1000,marginLeft: "auto",marginRight: "auto"}}>
             <div style={{padding: "2rem 2rem",backgroundColor: "#021928"}}>
                 <div style={{display: 'flex'}}>
-                    <input autoComplete='off' type="number" id="input-amount-to-bet" placeholder='Enter the amount' style={{borderRadius: "1.2rem",border: 0,padding: "1rem 2rem",backgroundColor: "black",flexBasis: "70%",color: "white",fontSize: "1.6rem"}} onChange={handleInputBalance}/>
+                    <input autoComplete='off' type="number" id="input-amount-to-bet" placeholder={text['Enter the amount']} style={{borderRadius: "1.2rem",border: 0,padding: "1rem 2rem",backgroundColor: "black",flexBasis: "70%",color: "white",fontSize: "1.6rem"}} onChange={handleInputBalance}/>
                         <div style={{flexBasis: "30%",display: "flex",justifyContent: "end"}}>
                             <div style={{display: "inline-flex"}}>
                             <ButtonBase style={{borderRadius: "1.1rem",padding: 0,margin: 0}} onClick={handleBetClick}>
@@ -148,28 +148,28 @@ export default function BodyUNBody() {
                 </div>
                 <div >
                     <div style={{display: "flex",justifyContent: "space-between"}}>
-                        <h3 style={{margin: 0,padding: "2rem 0 0 0", fontWeight: "normal"}}>
+                        <h5 style={{margin: 0,padding: "1.6rem 0 0 0", fontWeight: "normal",color: "rgb(140, 137, 137)"}}>
                             {text.Type}
-                        </h3>
-                        <h3 style={{margin: 0,padding: "2rem 0 0 0",fontWeight: "normal"}}>
+                        </h5>
+                        <h4 style={{margin: 0,padding: "1.6rem 0 0 0",fontWeight: "normal",color: "rgb(202, 197, 197)"}}>
                            {selectedBetCard.type ? selectedBetCard.type : "-"}
-                        </h3>
+                        </h4>
                     </div>
                     <div style={{display: "flex",justifyContent: "space-between"}}>
-                        <h3 style={{margin: 0,padding: "2rem 0 0 0",fontWeight: "normal"}}>
+                        <h5 style={{margin: 0,padding: "1.6rem 0 0 0",fontWeight: "normal",color: "rgb(140, 137, 137)"}}>
                             {text.Balance}   
-                        </h3>
-                        <h3 style={{margin: 0,padding: "2rem 0 0 0",fontWeight: "normal"}}>
+                        </h5>
+                        <h4 style={{margin: 0,padding: "1.6rem 0 0 0",fontWeight: "normal",color: "rgb(202, 197, 197)"}}>
                             {Number(1000).toFixed(2)}
-                        </h3>
+                        </h4>
                     </div>
                     <div style={{display: "flex",justifyContent: "space-between"}}>
-                        <h3 style={{margin: 0,padding: "2rem 0 0 0",fontWeight: "normal"}}>
+                        <h5 style={{margin: 0,padding: "1.6rem 0 0 0",fontWeight: "normal",color: "rgb(140, 137, 137)"}}>
                             {text.Period}
-                        </h3>
-                        <h3 style={{margin: 0,padding: "2rem 0 0 0",fontWeight: "normal"}}>
+                        </h5>
+                        <h4 style={{margin: 0,padding: "1.6rem 0 0 0",fontWeight: "normal",color: "rgb(202, 197, 197)"}}>
                            {selectedBetCard.type ? selectedBetCard.betTime : "-"}
-                        </h3>
+                        </h4>
                     </div>
                 </div>
             </div>

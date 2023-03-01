@@ -37,6 +37,20 @@ const bettingMatchesData =[
             bodyOdd: "2+45",
             overUnderOdd: "2+90"
         } 
+    },
+    {
+        matchId: 3,
+        matchTime: "08-01-2023 11:30PM",
+        teamA: "Chelsea",
+        teamB: "Tottenham",
+        fullTime: {
+            bodyOdd: "3+85",
+            overUnderOdd: "1+50"
+        },
+        halfTime: {
+            bodyOdd: "2+45",
+            overUnderOdd: "2+90"
+        } 
     }
 ]
 const favLeaguesData =[
@@ -114,7 +128,7 @@ export default function ParlayBody() {
               {favLeagues?.map((v) => {
 
                 return (
-                    <Avatar alt="Logo" key={v.leagueId} src={require(`../../../assets/leagues/${v.leagueLogo}`)} sx={{borderColor: "red",borderWidth: `${filterLeagues.includes(v.leagueId)? '2px': "0px"}`,borderStyle: 'solid'}} onClick={()=>handleFavLeaguesClick(v.leagueId)}/>  
+                    <Avatar alt="Logo" key={v.leagueId} src={require(`../../../assets/leagues/${v.leagueLogo}`)} sx={{borderColor: "red",borderWidth: `${filterLeagues.includes(v.leagueId)? '2px': "0px"}`,borderStyle: 'solid',cursor: "pointer"}} onClick={()=>handleFavLeaguesClick(v.leagueId)}/>  
                 )
               })}
             </div>
@@ -155,20 +169,20 @@ export default function ParlayBody() {
                 </div>
                 <div >
                     <div style={{display: "flex",justifyContent: "space-between"}}>
-                        <h3 style={{margin: 0,padding: "2rem 0 0 0",fontWeight: "normal"}}>
+                        <h5 style={{margin: 0,padding: "2rem 0 0 0", fontWeight: "normal",color: "rgb(140, 137, 137)"}}>                      
                             {text.Parlay}
-                        </h3>
-                        <h3 style={{margin: 0,padding: "2rem 0 0 0",fontWeight: "normal"}}>
+                        </h5>
+                        <h4 style={{margin: 0,padding: "2rem 0 0 0",fontWeight: "normal",color: "rgb(202, 197, 197)"}}>
                            {selectedBetCard.length > 0 ? selectedBetCard.length : "-"}
-                        </h3>
+                        </h4>
                     </div>
                     <div style={{display: "flex",justifyContent: "space-between"}}>
-                        <h3 style={{margin: 0,padding: "2rem 0 0 0", fontWeight: "normal"}}>
+                        <h5 style={{margin: 0,padding: "2rem 0 0 0", fontWeight: "normal",color: "rgb(140, 137, 137)"}}>                      
                             {text.Balance}
-                        </h3>
-                        <h3 style={{margin: 0,padding: "2rem 0 0 0", fontWeight: "normal"}}>
+                        </h5>
+                        <h4 style={{margin: 0,padding: "2rem 0 0 0",fontWeight: "normal",color: "rgb(202, 197, 197)"}}>
                             {Number(1000).toFixed(2)}
-                        </h3>
+                        </h4>
                     </div>
                    
                 </div>

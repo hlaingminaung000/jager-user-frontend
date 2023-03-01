@@ -21,7 +21,7 @@ body::-webkit-scrollbar {
 }
 .scrollable-body{
     overflow-y: auto;
-    height: calc(100vh - 84px);
+    height: calc(100svh - 82px);
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
@@ -30,14 +30,22 @@ body::-webkit-scrollbar {
 }
 .scrollable-parlay-body{
     overflow-y: auto;
-    height: calc(100vh - 181px);
+    height: calc(100svh - 167px);
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
 .scrollable-parlay-body::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
-
+.scrollable-bodyOver{
+    overflow-y: auto;
+    height: calc(100svh - 193px);
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.scrollable-bodyOver::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
 .logo-style{
     font-family: 'Courgette', cursive;
 }
@@ -70,9 +78,7 @@ body::-webkit-scrollbar {
     font-size: 19px;
     font-weight: bold;
 }
-/* h1{
-    font-family: 'Inter';
-} */
+
 .search-league{
     background-color: #0A324D;
     border: lightslategray;
@@ -85,9 +91,7 @@ body::-webkit-scrollbar {
 .search-league::cursor{
     color: white
 }
-/* .search-league:hover{
-    background-color: grey
-} */
+
 .header-filter-league{
     padding: 0 !important;
 }
@@ -106,6 +110,14 @@ h2 {
 
 h3 {
     font-size: 16px;
+}
+h4 {
+    font-size: 14px;
+
+}
+h5 {
+    font-size: 12px;
+    color: "rgb(140, 137, 137)";
 }
 
 
