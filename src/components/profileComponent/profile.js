@@ -2,11 +2,9 @@
 import React from 'react'
 import { useState } from 'react'
 import { useContext } from 'react'
-import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { languageContext } from '../../context'
@@ -17,8 +15,10 @@ import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import my from '../../languages/my.json'
 import en from '../../languages/en.json'
+import GoBackHeader from '../goBackHeader';
 
 export default function Profile() {
+  const navigate = useNavigate();
   const {lang} = useContext(languageContext);
   const text = lang == "my" ? my : en 
   const [openChangeLangModal, setOpenChangeLangModal] = useState(false);
@@ -29,9 +29,12 @@ export default function Profile() {
   const handleChangeLangClose = () => {
     setOpenChangeLangModal(false);
   };
+  const handleClick = (link) => {
+    navigate(`${link}`);
+  };
   return (
     <div >
-      <Header/>
+      <GoBackHeader hideArrow name={text.Profile}/>
         <div style={{padding: "2rem 1.5rem"}}>
            <div style={{display: "flex",padding: "1.6rem 1.5rem",backgroundColor: "#0A324D",borderRadius: "1.3rem",marginBottom: "4rem"}}>
              <div style={{borderRadius: "10rem",backgroundColor: "#005853",width: "6.5rem",height: "6.5rem",display: "flex",justifyContent: "center",alignItems: "center"}}>
@@ -42,7 +45,7 @@ export default function Profile() {
                <h3 style={{margin: 0,fontSize: "1.8rem"}} className="white">5000.00 MMK</h3>
              </div>
            </div>
-           <ButtonBase component="div" style={{backgroundColor: "#0A324D",padding: "1.8rem 0",display: "flex",justifyContent: "center",alignItems: "center",borderRadius: "1.3rem",marginBottom: "3rem"}}>
+           <ButtonBase component="div" style={{backgroundColor: "#0A324D",padding: "1.8rem 0",display: "flex",justifyContent: "center",alignItems: "center",borderRadius: "1.3rem",marginBottom: "3rem"}} onClick={()=> handleClick("rules")}>
               <h3 style={{margin: 0}} className="white">{text.Rules}</h3>
            </ButtonBase>
         
@@ -51,7 +54,7 @@ export default function Profile() {
             </ButtonBase>
 
            {openChangeLangModal ? <ChangeLangModal handleChangeLangClose={handleChangeLangClose} openChangeLangModal={openChangeLangModal}/> : ""}
-           <ButtonBase component="div" style={{backgroundColor: "#0A324D",padding: "1.8rem 0",display: "flex",justifyContent: "center",alignItems: "center",borderRadius: "1.3rem",marginBottom: "3rem"}}>
+           <ButtonBase component="div" style={{backgroundColor: "#0A324D",padding: "1.8rem 0",display: "flex",justifyContent: "center",alignItems: "center",borderRadius: "1.3rem",marginBottom: "3rem"}} onClick={()=> handleClick("changePassword")}>
               <h3 style={{margin: 0}} className="white">{text['Change Password']}</h3>
            </ButtonBase>
         </div>

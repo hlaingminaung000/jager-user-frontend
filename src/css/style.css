@@ -30,7 +30,7 @@ body::-webkit-scrollbar {
 }
 .scrollable-parlay-body{
     overflow-y: auto;
-    height: calc(100svh - 167px);
+    height: calc(100svh - 158px);
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
@@ -39,7 +39,7 @@ body::-webkit-scrollbar {
 }
 .scrollable-bodyOver{
     overflow-y: auto;
-    height: calc(100svh - 193px);
+    height: calc(100svh - 184px);
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
@@ -75,8 +75,10 @@ body::-webkit-scrollbar {
 }
 #news-search::placeholder{
     color: white;
-    font-size: 19px;
-    font-weight: bold;
+    /* color: rgb(140, 137, 137); */
+
+    font-size: 16px;
+    font-weight: normal;
 }
 
 .search-league{
@@ -119,6 +121,61 @@ h5 {
     font-size: 12px;
     color: "rgb(140, 137, 137)";
 }
+h6 {
+    font-size: 10px;
+    color: "rgb(140, 137, 137)";
+}
+.month-popover{
+    transform: translateX(-50%);
+    transition: transform 2s ease;
+}
+.month-popover-slide{
+    transform: translateX(-50%);
+    transition: transform 2s ease;
+    transform: none;
+}
+.change-password-input .ant-input{
+    background-color: rgb(10, 50, 77);
+    color: white;
+    padding: 0.6rem 0 !important;
+}
+.change-password-input .ant-input-affix-wrapper:hover{
+    border-color: #87CEEB;
+}
+.change-password-input .ant-input-affix-wrapper-focused{
+    border-color: #87CEEB;
+}
+.change-password-input .ant-form-item-feedback-icon-success{
+    color: #87CEEB
+}
+.change-password-input .ant-form-item-explain-error{
+    font-size: 1.2rem;
+}
+.change-password-input .ant-input-password-icon{
+  color: grey !important
+}
+.change-password-input .ant-form-item-required{
+    color: white !important;
+}
+.bet-amount .ant-form-item{
+    margin-bottom: 0 !important;
+}
+.bet-amount .ant-form-item-explain-error{
+    font-size: 1rem;
+}
+.bet-amount .ant-input::placeholder {
+    color: grey;
 
+}
+.bet-amount .ant-input{
+    background-color: black;
+}
+.change-password-input .anticon-lock{
+    color: grey;
+    padding-right: 1rem;
+}
 
- 
+.change-password-input .anticon-user{
+    color: grey;
+    padding-right: 1rem;
+}

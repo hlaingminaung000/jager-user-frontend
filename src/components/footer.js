@@ -17,8 +17,7 @@ export default function Footer() {
     changePage(link)
     navigate(`${link}`);
   }
-  console.log(`currentPage`)
-  console.log(currentPage)
+  
   return (
 
       <div style={{width: "390px",marginLeft: "auto",marginRight:"auto",display: "flex",flexDirection: "row",justifyContent: "space-evenly",padding: "1.6rem 0",borderRadius: "20px 20px 0 0",position: "fixed",bottom: 0,right: 0,left: 0,zIndex: 1000}} className="footer-color">
