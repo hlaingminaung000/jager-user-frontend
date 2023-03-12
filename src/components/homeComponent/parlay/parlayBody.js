@@ -311,18 +311,18 @@ export function Card({matchData,handleBetMatchClick,selectedBetCard,summary,betT
                                 {(matchTimeRange == "Full Time")? matchData.fullTime.bodyOdd : matchData.halfTime.bodyOdd}
                             </h4>
                         </div>
-                        {/* <h2 style={{margin: 0,marginLeft: "20px"}}>0</h2> */}
+                        {/* <h3 style={{margin: 0,marginLeft: "20px"}}>0</h3> */}
                     </div>
                 </ButtonBase>
                 <ButtonBase style={{height: "80px",borderRadius: "0 1.3rem 0 0",backgroundColor: `${(selectedBetCard?.team == matchData.teamB && selectedBetCard?.matchId == matchData.matchId && selectedBetCard.choose == "win")? bettingSelectedColor : ""}`,flexBasis: "50%",padding: "2rem 0",display: "flex",flexDirection: "column",alignItems: "center"}} onClick={()=>handleBetMatchClick({betTime: matchTimeRange,matchId: matchData.matchId,type: "body",team: matchData.teamB,choose: "win"})}>
                     <h4 style={{margin: 0}}>{matchData.teamB}</h4>
-                    {/* <div style={{marginTop: "16px",display: "flex",alignItems: "center",justifyContent: "center"}}> */}
-                    {/* <div style={{width: "6rem",height: "3rem",backgroundColor: "#87CEEB",display: 'flex',justifyContent: 'center',alignItems: "center",borderRadius: "1rem",cursor: "pointer"}}>
-                        <h3 style={{margin: 0}} className="black">
-                            {(matchTimeRange == "Full Time")? matchData.fullTime.bodyOdd : matchData.halfTime.bodyOdd}
-                        </h3>
-                    </div> */}
-                        {/* <h2 style={{margin: 0,marginLeft: "20px"}}>2</h2> */}
+                    {/* <div style={{marginTop: "12px",display: "flex",alignItems: "center",justifyContent: "center"}}> */}
+                        {/* <div style={{width: "4.6rem",height: "2.6rem",backgroundColor: "#87CEEB",display: 'flex',justifyContent: 'center',alignItems: "center",borderRadius: "1rem",cursor: "pointer"}}>
+                            <h4 style={{margin: 0}} className="black">
+                                {(matchTimeRange == "Full Time")? matchData.fullTime.bodyOdd : matchData.halfTime.bodyOdd}
+                            </h4>
+                        </div> */}
+                        {/* <h3 style={{margin: 0,marginLeft: "20px"}}>2</h3> */}
                     {/* </div> */}
                 </ButtonBase>
             </div>
